@@ -1,0 +1,19 @@
+def username_generator(first_name, last_name):
+  user_name = first_name[:3] + last_name[:4]
+  if len(first_name) <= 3:
+    user_name = first_name + last_name[:4]
+  elif len(last_name) <= 4:
+    user_name = first_name[:3] + last_name
+  return user_name
+
+def password_generator(user_name):
+  password = ''
+  for i in range(0, len(user_name)):
+    password += user_name[i-1]
+  return password
+
+username = username_generator('Anthony', 'Batitto')
+password = password_generator('AntBati')
+
+print(username)
+print(password)
